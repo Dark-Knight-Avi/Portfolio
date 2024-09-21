@@ -1,6 +1,5 @@
 import { ButtonPrimary, ButtonOutline } from "./Button";
-import Intro from "./Intro";
-
+import Intro from "./Intro.jsx";
 
 const Hero = () => {
   return (
