@@ -62,7 +62,8 @@
         "Software Collaboration: Working with the BOSCH software development team to provide timely support, ensuring successful project completion within deadlines and delivering a high-quality product.",
         "Tool Development: Created a Digital Survey Tool using React and Python Flask. Managed production-level deployment with Nginx server, employing reverse proxy and load balancing techniques.",
         "Survey Success: Facilitated the accurate surveying of 10,000 households in Bangalore using the tool, ensuring precise data collection.",
-        "Data Analysis: Developed Python scripts for Exploratory Data Analysis and Sanity Checks, ensuring data integrity and quality."
+        "Data Analysis: Developed Python scripts for Exploratory Data Analysis and Sanity Checks, ensuring data integrity and quality.",
+        "Tool Testing & Optimization: Led the testing and bug-fixing process for the Aggregate Travel Demand Model, a QGIS plugin tool developed by BOSCH and IISc. Achieved a 40% reduction in runtime, optimizing performance for use by the Government of Karnataka in Bangalore city traffic forecasting and urban development planning."
       ],
       "tech_stacks": [
         {
