@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
+import data from '../data/resume.json'
 
 
 const Header = () => {
@@ -15,10 +16,10 @@ const Header = () => {
             className="logo"
           >
             <img
-              src="/images/logo.svg"
-              width={40}
-              height={40}
-              alt="Henry Clark"
+              src={data.images.logo}
+              width={100}
+              height={100}
+              alt="Aritra Karmakar"
             />
           </a>
         </h1>

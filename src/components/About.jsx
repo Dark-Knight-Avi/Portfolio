@@ -30,11 +30,11 @@ const About = () => {
             }
 
             <img
-              src="/images/logo.svg"
+              src={data.images.logo}
               alt="Logo"
-              width={30}
-              height={30}
-              className="ml-auto md:w-[40px] md:h-[40px]"
+              width={50}
+              height={50}
+              className="ml-auto md:w-[60px] md:h-[60px]"
             />
           </div>
         </div>
