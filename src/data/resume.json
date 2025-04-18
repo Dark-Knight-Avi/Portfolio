@@ -1,4 +1,11 @@
 {
+  "images": {
+    "title": "/images/title.png",
+    "avatar": "/images/avatar.jpg",
+    "logo": "/images/logo.png",
+    "profile": "/images/hero-banner.jpg"
+  },
+  "resume_pdf": "/cv/Aritra_Karmakar_Resume_FSWD.pdf",
   "name": "Aritra Karmakar",
   "dob": "31/03/2001",
   "portfolio_hero_text": "Building Scalable Modern Websites for the Future",
@@ -299,128 +306,255 @@
       ]
     }
   ],
-  "skills": {
-    "languages": [
-      {
-        "lang": "JavaScript",
-        "lang_prof": 90
-      },
-      {
-        "lang": "TypeScript",
-        "lang_prof": 90
-      },
-      {
-        "lang": "Java",
-        "lang_prof": 70
-      },
-      {
-        "lang": "Python",
-        "lang_prof": 70
-      }
+  "skills": [
+    {
+      "header": "Speaking the Native Tongue of Technology",
+      "desc": "From scripting dynamic user interfaces to building scalable backend logic, these languages are my everyday tools of expression.",
+      "list": [
+        {
+          "skill": "JavaScript",
+          "skill_prof": 90,
+          "desc": "Web Development",
+          "icon": "/images/skills/javascript.svg"
+        },
+        {
+          "skill": "TypeScript",
+          "skill_prof": 90,
+          "desc": "Frontend Engineering",
+          "icon": "/images/skills/typescript.svg"
+        },
+        {
+          "skill": "Java",
+          "skill_prof": 70,
+          "desc": "Enterprise Applications",
+          "icon": "/images/skills/java.svg"
+        },
+        {
+          "skill": "Python",
+          "skill_prof": 70,
+          "desc": "Data Science",
+          "icon": "/images/skills/python.svg"
+        }
+      ]
+    },
+    {
+      "header": "Tools That Shape Ideas Into Experiences",
+      "desc": "Every pixel, every function — sharpened with the tools that developers swear by. Precision meets performance in my daily toolkit.",
+      "list": [
+        {
+          "skill": "GitHub",
+          "skill_prof": 80,
+          "desc": "Version Control",
+          "icon": "/images/skills/github.svg"
+        },
+        {
+          "skill": "Linux",
+          "skill_prof": 95,
+          "desc": "System Administration",
+          "icon": "/images/skills/linux.svg"
+        },
+        {
+          "skill": "VS Code",
+          "skill_prof": 95,
+          "desc": "Code Editing",
+          "icon": "/images/skills/vscode.svg"
+        },
+        {
+          "skill": "IntelliJ IDEA",
+          "skill_prof": 75,
+          "desc": "Java Development",
+          "icon": "/images/skills/intellij-idea.svg"
+        }
+      ]
+    },
+    {
+      "header": "Crafting With Frameworks",
+      "desc": "Powerful frameworks and libraries are my building blocks — enabling stunning UI, efficient APIs, and apps that just work.",
+      "list": [
+        {
+          "skill": "React JS",
+          "skill_prof": 90,
+          "desc": "Frontend Development",
+          "icon": "/images/skills/react.svg"
+        },
+        {
+          "skill": "Next JS",
+          "skill_prof": 95,
+          "desc": "Fullstack Framework",
+          "icon": "/images/skills/nextjs.svg"
+        },
+        {
+          "skill": "Next Auth",
+          "skill_prof": 80,
+          "desc": "Authentication",
+          "icon": "/images/skills/nextauth.svg"
+        },
+        {
+          "skill": "Redux",
+          "skill_prof": 80,
+          "desc": "State Management",
+          "icon": "/images/skills/redux.svg"
+        },
+        {
+          "skill": "React Query",
+          "skill_prof": 80,
+          "desc": "Data Fetching",
+          "icon": "/images/skills/react-query.svg"
+        },
+        {
+          "skill": "Node JS",
+          "skill_prof": 80,
+          "desc": "Backend Development",
+          "icon": "/images/skills/nodejs.svg"
+        },
+        {
+          "skill": "Express.js",
+          "skill_prof": 90,
+          "desc": "Backend Routing",
+          "icon": "/images/skills/expressjs.svg"
+        },
+        {
+          "skill": "Tailwind CSS",
+          "skill_prof": 95,
+          "desc": "Utility Styling",
+          "icon": "/images/skills/tailwindcss.svg"
+        },
+        {
+          "skill": "Django",
+          "skill_prof": 80,
+          "desc": "Web Backend",
+          "icon": "/images/skills/django.svg"
+        },
+        {
+          "skill": "Flask",
+          "skill_prof": 75,
+          "desc": "Web Backend",
+          "icon": "/images/skills/flask.svg"
+        },
+        {
+          "skill": "Bootstrap",
+          "skill_prof": 95,
+          "desc": "Responsive Design",
+          "icon": "/images/skills/bootstrap.svg"
+        },
+        {
+          "skill": "NumPy",
+          "skill_prof": 80,
+          "desc": "Scientific Computing",
+          "icon": "/images/skills/numpy.svg"
+        },
+        {
+          "skill": "Pandas",
+          "skill_prof": 85,
+          "desc": "Data Analysis",
+          "icon": "/images/skills/pandas.svg"
+        },
+        {
+          "skill": "Socket.io",
+          "skill_prof": 80,
+          "desc": "Real-time Communication",
+          "icon": "/images/skills/socketio.svg"
+        },
+        {
+          "skill": "Jest",
+          "skill_prof": 75,
+          "desc": "Testing",
+          "icon": "/images/skills/jest.svg"
+        }
+      ]
+    },
+    {
+      "header": "Cutting-Edge Tech for Real-World Impact",
+      "desc": "Databases, cloud, devops, and everything in between — these technologies fuel the systems behind the screens, optimized for impact.",
+      "list": [
+        {
+          "skill": "Postman",
+          "skill_prof": 95,
+          "desc": "API Testing",
+          "icon": "/images/skills/postman.svg"
+        },
+        {
+          "skill": "MongoDB",
+          "skill_prof": 85,
+          "desc": "NoSQL Database",
+          "icon": "/images/skills/mongodb.svg"
+        },
+        {
+          "skill": "MySQL",
+          "skill_prof": 95,
+          "desc": "Relational Database",
+          "icon": "/images/skills/mysql.svg"
+        },
+        {
+          "skill": "Redis",
+          "skill_prof": 80,
+          "desc": "Caching Layer",
+          "icon": "/images/skills/redis.svg"
+        },
+        {
+          "skill": "Prisma",
+          "skill_prof": 85,
+          "desc": "ORM Mapping",
+          "icon": "/images/skills/prisma.svg"
+        },
+        {
+          "skill": "PostgreSQL",
+          "skill_prof": 85,
+          "desc": "Advanced Database",
+          "icon": "/images/skills/postgresql.svg"
+        },
+        {
+          "skill": "GraphQL",
+          "skill_prof": 70,
+          "desc": "API Query Language",
+          "icon": "/images/skills/graphql.svg"
+        },
+        {
+          "skill": "AWS",
+          "skill_prof": 75,
+          "desc": "Cloud Services",
+          "icon": "/images/skills/aws.svg"
+        },
+        {
+          "skill": "GitLab",
+          "skill_prof": 70,
+          "desc": "Automation Pipeline",
+          "icon": "/images/skills/gitlab.svg"
+        },
+        {
+          "skill": "Kubernetes",
+          "skill_prof": 65,
+          "desc": "Container Orchestration",
+          "icon": "/images/skills/kubernetes.svg"
+        },
+        {
+          "skill": "Docker",
+          "skill_prof": 80,
+          "desc": "Containerization",
+          "icon": "/images/skills/docker.svg"
+        },
+        {
+          "skill": "Nginx",
+          "skill_prof": 70,
+          "desc": "Web Server",
+          "icon": "/images/skills/nginx.svg"
+        }
+      ]
+    }
+  ],
+  "other_skills": {
+    "Soft skills": [
+      "Teamwork and Collaboration",
+      "Time Management and Prioritization",
+      "Attention to Detail",
+      "Effective Communication",
+      "Adaptability and Flexibility"
     ],
-    "tools": [
-      {
-        "tool": "Git",
-        "tool_prof": 70
-      },
-      {
-        "tool": "Linux",
-        "tool_prof": 65
-      },
-      {
-        "tool": "VS Code",
-        "tool_prof": 95
-      },
-      {
-        "tool": "IntelliJ IDEA",
-        "tool_prof": 75
-      }
-    ],
-    "fnl": [
-      {
-        "fnl": "React JS",
-        "fnl_prof": 90
-      },
-      {
-        "fnl": "Next JS",
-        "fnl_prof": 50
-      },
-      {
-        "fnl": "Redux",
-        "fnl_prof": 80
-      },
-      {
-        "fnl": "React Query",
-        "fnl_prof": 80
-      },
-      {
-        "fnl": "Node JS",
-        "fnl_prof": 80
-      },
-      {
-        "fnl": "Tailwind CSS",
-        "fnl_prof": 95
-      },
-      {
-        "fnl": "Django",
-        "fnl_prof": 75
-      },
-      {
-        "fnl": "Bootstrap",
-        "fnl_prof": 95
-      }
-    ],
-    "techs": [
-      {
-        "tech": "REST-API",
-        "tech_prof": 90
-      },
-      {
-        "tech": "Postman",
-        "tech_prof": 95
-      },
-      {
-        "tech": "MongoDB",
-        "tech_prof": 85
-      },
-      {
-        "tech": "MySQL",
-        "tech_prof": 95
-      },
-      {
-        "tech": "Redis",
-        "tech_prof": 80
-      },
-      {
-        "tech": "Prisma",
-        "tech_prof": 85
-      },
-      {
-        "tech": "Stripe",
-        "tech_prof": 85
-      },
-      {
-        "tech": "PostgreSQL",
-        "tech_prof": 85
-      },
-      {
-        "tech": "Strapi",
-        "tech_prof": 75
-      },
-      {
-        "tech": "Chrome Extensions",
-        "tech_prof": 75
-      },
-      {
-        "tech": "Data Structures & Algorithms",
-        "tech_prof": 90
-      }
-    ],
-    "techSkillProf": [
+    "Technology skill proficiencies": [
       "Adaptability and Flexibility",
       "Problem-Solving and Critical Thinking"
     ],
-    "hobbies": [
+    "Hobbies": [
       "Playing Cricket",
       "Listening Audio Stories"
     ]
