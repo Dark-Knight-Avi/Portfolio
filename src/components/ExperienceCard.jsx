@@ -51,7 +51,7 @@ const ExperienceCard = ({
                         )
                     })}
                 </ul>
-                <div className={'flex items-center gap-3 ring-2 ring-inset ring-zinc-50/10 rounded-2xl p-3 hover:bg-zinc-800 transition-colors group ' + classes}>
+                <div className={'flex items-center flex-wrap gap-3 ring-2 ring-inset ring-zinc-50/10 rounded-2xl p-3 hover:bg-zinc-800 transition-colors group ' + classes}>
                     {techStacks.map((techStack, index) => (<figure key={techStack.label} className="bg-zinc-700/50 rounded-lg overflow-hidden w-9 h-9 p-2 group-hover:bg-zinc-900 transition-colors">
                         <img
                             src={techStack.imgSrc}
