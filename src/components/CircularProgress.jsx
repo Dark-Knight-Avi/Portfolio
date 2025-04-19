@@ -3,35 +3,12 @@ import PropTypes from "prop-types";
 
 const CircularProgress = ({ percent }) => {
   const [animatedPercent, setAnimatedPercent] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const circleRef = useRef(null);
+  const animationRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (circleRef.current) {
-      observer.observe(circleRef.current);
-    }
-
-    return () => {
-      if (circleRef.current) {
-        observer.unobserve(circleRef.current);
-      }
-    };
-  }, [hasAnimated]);
-
-  useEffect(() => {
-    if (!hasAnimated) return;
-
+  const animateProgress = () => {
     let frame = 0;
-    const duration = 5000;
+    const duration = 3000;
     const frameRate = 60;
     const totalFrames = Math.round((duration / 1000) * frameRate);
 
@@ -44,12 +21,34 @@ const CircularProgress = ({ percent }) => {
       setAnimatedPercent(value);
 
       if (frame < totalFrames) {
-        requestAnimationFrame(animate);
+        animationRef.current = requestAnimationFrame(animate);
       }
     };
 
+    // Reset before animating again
+    setAnimatedPercent(0);
+    cancelAnimationFrame(animationRef.current);
     animate();
-  }, [hasAnimated, percent]);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          animateProgress();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = circleRef.current;
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+      cancelAnimationFrame(animationRef.current);
+    };
+  }, [percent]);
 
   return (
     <div className="relative size-16" ref={circleRef}>
