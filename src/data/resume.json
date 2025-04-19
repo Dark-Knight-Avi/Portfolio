@@ -73,18 +73,19 @@
         "Tool Testing & Optimization: Led the testing and bug-fixing process for the Aggregate Travel Demand Model, a QGIS plugin tool developed by BOSCH and IISc. Achieved a 40% reduction in runtime, optimizing performance for use by the Government of Karnataka in Bangalore city traffic forecasting and urban development planning."
       ],
       "tech_stacks": [
-        {
-          "imgSrc": "/images/figma.svg",
-          "label": "Figma"
-        },
-        {
-          "imgSrc": "/images/css3.svg",
-          "label": "CSS"
-        },
-        {
-          "imgSrc": "/images/javascript.svg",
-          "label": "JavaScript"
-        }
+        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
+        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
+        { "imgSrc": "/images/skills/python.svg", "label": "Python" },
+        { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
+        { "imgSrc": "/images/skills/flask.svg", "label": "Flask" },
+        { "imgSrc": "/images/skills/postgresql.svg", "label": "PostgreSQL" },
+        { "imgSrc": "/images/skills/linux.svg", "label": "Linux" },
+        { "imgSrc": "/images/skills/bash.svg", "label": "Shell Scripting" },
+        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" },
+        { "imgSrc": "/images/skills/nginx.svg", "label": "Nginx" },
+        { "imgSrc": "/images/skills/docker.svg", "label": "Docker" },
+        { "imgSrc": "/images/skills/pandas.svg", "label": "Pandas" },
+        { "imgSrc": "/images/skills/numpy.svg", "label": "NumPy" }
       ],
       "verifyLink": "https://cistup.iisc.ac.in/CiSTUP_Website/pages/people/research-staff1.php#:~:text=Networks%2C%20Machine%20learning.-,Mr.%20Aritra%20Karmakar,-Designation%3A%20Full"
     },
@@ -100,18 +101,13 @@
         "Issue Resolution: Successfully resolved 2 major and 1 minorissues in the Product Dashboard using React and TypeScript, improving user experience and functionality."
       ],
       "tech_stacks": [
-        {
-          "imgSrc": "/images/figma.svg",
-          "label": "Figma"
-        },
-        {
-          "imgSrc": "/images/css3.svg",
-          "label": "CSS"
-        },
-        {
-          "imgSrc": "/images/javascript.svg",
-          "label": "JavaScript"
-        }
+        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
+        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
+        { "imgSrc": "/images/skills/tailwindcss.svg", "label": "Tailwind CSS" },
+        { "imgSrc": "/images/skills/typescript.svg", "label": "TypeScript" },
+        { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
+        { "imgSrc": "/images/skills/nextjs.svg", "label": "Next JS" },
+        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" }
       ],
       "verifyLink": "/images/experienceCertificates/OSlash.pdf"
     },
@@ -128,18 +124,15 @@
         "User Authentication: Implemented user authentication functionality to enhance security and user experience."
       ],
       "tech_stacks": [
-        {
-          "imgSrc": "/images/figma.svg",
-          "label": "Figma"
-        },
-        {
-          "imgSrc": "/images/css3.svg",
-          "label": "CSS"
-        },
-        {
-          "imgSrc": "/images/javascript.svg",
-          "label": "JavaScript"
-        }
+        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
+        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
+        { "imgSrc": "/images/skills/tailwindcss.svg", "label": "Tailwind CSS" },
+        { "imgSrc": "/images/skills/typescript.svg", "label": "TypeScript" },
+        { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
+        { "imgSrc": "/images/skills/mongodb.svg", "label": "MongoDB" },
+        { "imgSrc": "/images/skills/expressjs.svg", "label": "Express.js" },
+        { "imgSrc": "/images/skills/nodejs.svg", "label": "Node JS" },
+        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" }
       ],
       "verifyLink": "https://www.edureka.co/certificates/mycertificate/1b197baf15d24c0a8c9f8b9429e0a021"
     },
@@ -156,18 +149,12 @@
         "User Authentication: Allowed unique userIDs to be generated using the Django Authentication System."
       ],
       "tech_stacks": [
-        {
-          "imgSrc": "/images/figma.svg",
-          "label": "Figma"
-        },
-        {
-          "imgSrc": "/images/css3.svg",
-          "label": "CSS"
-        },
-        {
-          "imgSrc": "/images/javascript.svg",
-          "label": "JavaScript"
-        }
+        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
+        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
+        { "imgSrc": "/images/skills/python.svg", "label": "Python" },
+        { "imgSrc": "/images/skills/django.svg", "label": "Django" },
+        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" },
+        { "imgSrc": "/images/skills/nginx.svg", "label": "Nginx" }
       ],
       "verifyLink": "/images/experienceCertificates/Exposys_Data_Labs_Certificate.pdf"
     }
@@ -334,6 +321,18 @@
           "skill_prof": 70,
           "desc": "Data Science",
           "icon": "/images/skills/python.svg"
+        },
+        {
+          "skill": "SQL",
+          "skill_prof": 95,
+          "desc": "Database Query",
+          "icon": "/images/skills/sql.svg"
+        },
+        {
+          "skill": "Shell Scripting",
+          "skill_prof": 90,
+          "desc": "Automation",
+          "icon": "/images/skills/bash.svg"
         }
       ]
     },
