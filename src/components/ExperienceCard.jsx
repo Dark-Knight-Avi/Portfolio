@@ -26,7 +26,7 @@ const ExperienceCard = ({
                 />
             </figure>
 
-            <div className="flex flex-col items-start justify-start gap-y-2 w-[75%]">
+            <div className="flex flex-col items-start justify-start gap-y-2 w-[95%] md:w-[75%]">
                 <h3 className="title-1 mb-3 flex justify-start items-center">
                     {role} at {companyName}
                     <a href={verifyLink} target='_blank' className="hover:cursor-pointer p-1 ml-1 rounded-full hover:bg-zinc-700">

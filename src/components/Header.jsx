@@ -17,8 +17,8 @@ const Header = () => {
           >
             <img
               src={data.images.logo}
-              width={100}
-              height={100}
+              width={75}
+              height={75}
               alt="Aritra Karmakar"
             />
           </a>

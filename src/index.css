@@ -32,6 +32,9 @@ body {
 .title-1 {
   @apply text-[22px] font-normal
 }
+.title-1-md {
+  @apply text-[16px] font-normal
+}
 
 
 
