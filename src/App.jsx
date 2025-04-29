@@ -55,6 +55,7 @@ const App = () => {
         <meta name="twitter:description" content="My name is Aritra Karmakar, I'm a Full-Stack Developer based in Bangalore, Karnataka, India. I enjoy creating things that live on the internet." />
         <meta name="twitter:site" content="@snippetxxxxxxx" />
         <meta name="twitter:creator" content="@snippetxxxxxxx" />
+        <meta name="google-site-verification" content="O3tF8bTaB9Wba3HmSXt7skaGSdQCk1SZX6k7ZmB_WRM" />
       </Helmet>
       <Header />
       <main>
