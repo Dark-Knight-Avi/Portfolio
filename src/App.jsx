@@ -14,6 +14,7 @@ import Review from "./components/Review";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Experience from './components/Experience';
+import { Helmet } from 'react-helmet-async'
 
 const App = () => {
 
@@ -38,6 +39,23 @@ const App = () => {
 
   return (
     <ReactLenis root>
+      <Helmet>
+        <title>Aritra Karmakar | Portfolio</title>
+        <meta name="description" content="Aritra is a highly motivated Full Stack Developer skilled in React, Python, DevOps, and data analysis. Experienced in leading end-to-end software development and deploying scalable applications with cross-functional teams." />
+        <meta name="keywords" content="Aritra, Full Stack Developer, React Developer, Python Developer, DevOps Engineer, Software Development, Scalable Applications, Data Analysis, Web Developer, End-to-End Development, Cross-Functional Teams" />
+        <meta name="author" content="Aritra Karmakar" />
+        <link rel="canonical" href="https://aritrakaporfolio.pages.dev/" />
+        <meta property="og:title" content="Aritra Karmakar | Portfolio" />
+        <meta property="og:description" content="Aritra is a full-stack developer with expertise in GIS, React, Python, and scalable application development." />
+        <meta property="og:url" content="https://aritrakaporfolio.pages.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://aritrakaportfolio.pages.dev/images/preview.png" />
+        <meta name="twitter:card" content="https://x.com/snippetxxxxxxx/photo" />
+        <meta name="twitter:title" content="Aritra Karmakar | Portfolio" />
+        <meta name="twitter:description" content="My name is Aritra Karmakar, I'm a Full-Stack Developer based in Bangalore, Karnataka, India. I enjoy creating things that live on the internet." />
+        <meta name="twitter:site" content="@snippetxxxxxxx" />
+        <meta name="twitter:creator" content="@snippetxxxxxxx" />
+      </Helmet>
       <Header />
       <main>
         <Hero />
