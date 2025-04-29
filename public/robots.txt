@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
 Sitemap: https://aritrakaporfolio.pages.dev/sitemap.xml
-google-site-verification: googlebc13f79909f493d6.html
