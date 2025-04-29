@@ -17,7 +17,7 @@ const Hero = () => {
                 src={data.images.avatar}
                 width={40}
                 height={40}
-                alt="Henry clark portrait"
+                alt="Aritra Karmakar portrait"
                 className="img-cover"
               />
             </figure>
@@ -56,7 +56,7 @@ const Hero = () => {
               src={data.images.profile}
               width={656}
               height={800}
-              alt="Henry Clark"
+              alt="Aritra Karmakar"
               className="w-full"
             />
           </figure>

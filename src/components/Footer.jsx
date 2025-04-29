@@ -118,7 +118,7 @@ const Footer = () => {
               src="/images/logo.svg"
               width={40}
               height={40}
-              alt="Logo"
+              alt="Aritra Karmakar Logo"
             />
           </a>
 

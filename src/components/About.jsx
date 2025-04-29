@@ -31,7 +31,7 @@ const About = () => {
 
             <img
               src={data.images.logo}
-              alt="Logo"
+              alt="Aritra Karmakar Logo"
               width={50}
               height={50}
               className="ml-auto md:w-[60px] md:h-[60px]"

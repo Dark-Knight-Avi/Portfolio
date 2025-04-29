@@ -291,6 +291,22 @@
         "TypeScript",
         "React JS"
       ]
+    },
+    {
+      "projectTitle": "AI Image Enhancer",
+      "projectTag": "Personal Project",
+      "projectCover": "/images/projects/pr9.png",
+      "projectTemplate": "https://raw.githubusercontent.com/Dark-Knight-Avi/Portfolio-MERN/master/src/assets/projects/pr9.png",
+      "projectDesc": [
+        "An AI tool whic enhances any image in second!."
+      ],
+      "projectLink": "https://enhanceimage-ai.pages.dev",
+      "projectTechs": [
+        "JavaScript",
+        "React JS",
+        "API Polling",
+        "Tailwind CSS"
+      ]
     }
   ],
   "skills": [
