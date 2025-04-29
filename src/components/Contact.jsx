@@ -84,7 +84,7 @@ const Contact = () => {
                 id="name"
                 autoComplete="name"
                 required
-                placeholder="Henry Clark"
+                placeholder="Aritra Karmakar"
                 className="text-field reveal-up"
               />
             </div>
