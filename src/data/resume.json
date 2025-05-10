@@ -586,5 +586,49 @@
         "Handled the Simulation of the Superheterodyne Receiverin MATLAB."
       ]
     }
+  ],
+  "social_links": [
+    {
+      "label": "LinkedIn",
+      "icon": "/images/social/linkedin.svg",
+      "link": "https://www.linkedin.com/in/aritra-karmakar-3265472b1/"
+    },
+    {
+      "label": "Twitter",
+      "icon": "/images/social/twitter.svg",
+      "link": "https://x.com/snippetxxxxxxx/"
+    },
+    {
+      "label": "Instagram",
+      "icon": "/images/social/instagram.svg",
+      "link": "https://www.instagram.com/avi_k_aritra/"
+    },
+    {
+      "label": "GitHub",
+      "icon": "/images/social/github.svg",
+      "link": "https://github.com/Dark-Knight-Avi"
+    }
+  ],
+  "sitemap": [
+    {
+      "label": "Home",
+      "href": "#home",
+      "className": "nav-link active"
+    },
+    {
+      "label": "About",
+      "href": "#about",
+      "className": "nav-link"
+    },
+    {
+      "label": "Work",
+      "href": "#work",
+      "className": "nav-link"
+    },
+    {
+      "label": "Contact me",
+      "href": "#contact",
+      "className": "nav-link"
+    }
   ]
 }

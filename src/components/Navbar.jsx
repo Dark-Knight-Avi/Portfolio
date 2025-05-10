@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import data from '../data/resume.json'
 
 
 const Navbar = ({ navOpen }) => {
@@ -27,46 +28,15 @@ const Navbar = ({ navOpen }) => {
     activeBox.current.style.height = event.target.offsetHeight + 'px';
   }
 
-  const navItems = [
-    {
-      label: 'Home',
-      link: '#home',
-      className: 'nav-link active',
-      ref: lastActiveLink
-    },
-    {
-      label: 'About',
-      link: '#about',
-      className: 'nav-link'
-    },
-    {
-      label: 'Experience',
-      link: '#experience',
-      className: 'nav-link'
-    },
-    {
-      label: 'Work',
-      link: '#work',
-      className: 'nav-link'
-    },
-    {
-      label: 'Reviews',
-      link: '#reviews',
-      className: 'nav-link'
-    },
-    {
-      label: 'Contact',
-      link: '#contact',
-      className: 'nav-link md:hidden'
-    }
-  ];
+  data.sitemap[0]["ref"] = lastActiveLink
+
 
   return (
     <nav className={'navbar ' + (navOpen ? 'active' : '')}>
       {
-        navItems.map(({ label, link, className, ref }, key) => (
+        data.sitemap.map(({ label, href, className, ref }, key) => (
           <a
-            href={link}
+            href={href}
             key={key}
             ref={ref}
             className={className}

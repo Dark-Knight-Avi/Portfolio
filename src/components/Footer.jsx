@@ -1,51 +1,5 @@
 import { ButtonPrimary } from "./Button";
-
-
-const sitemap = [
-  {
-    label: 'Home',
-    href: '#home'
-  },
-  {
-    label: 'About',
-    href: '#about'
-  },
-  {
-    label: 'Work',
-    href: '#work'
-  },
-  {
-    label: 'Reviews',
-    href: '#reviews'
-  },
-  {
-    label: 'Contact me',
-    href: '#contact'
-  }
-];
-
-const socials = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/Dark-Knight-Avi'
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/aritra-karmakar-3265472b1/'
-  },
-  {
-    label: 'Twitter X',
-    href: 'https://x.com/codewithsadee_'
-  },
-  {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/avi_k_aritra/'
-  },
-  {
-    label: 'CodePen',
-    href: 'https://codepen.io/codewithsadee'
-  }
-];
+import data from '../data/resume.json'
 
 
 const Footer = () => {
@@ -74,7 +28,7 @@ const Footer = () => {
               <p className="mb-2 reveal-up">Sitemap</p>
 
               <ul>
-                {sitemap.map(({ label, href }, key) => (
+                {data.sitemap.map(({ label, href }, key) => (
                   <li key={key}>
                     <a
                       href={href}
@@ -91,10 +45,10 @@ const Footer = () => {
               <p className="mb-2 reveal-up">Socials</p>
 
               <ul>
-                {socials.map(({ label, href }, key) => (
+                {data.social_links.map(({ label, link }, key) => (
                   <li key={key}>
                     <a
-                      href={href}
+                      href={link}
                       target="_blank"
                       className="block text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200 reveal-up"
                     >
@@ -115,9 +69,9 @@ const Footer = () => {
             className="logo reveal-up"
           >
             <img
-              src="/images/logo.svg"
-              width={40}
-              height={40}
+              src={data.images.logo}
+              width={75}
+              height={75}
               alt="Aritra Karmakar Logo"
             />
           </a>
