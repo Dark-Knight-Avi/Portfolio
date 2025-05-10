@@ -10,8 +10,8 @@
   "dob": "31/03/2001",
   "portfolio_hero_text": "Building Scalable Modern Websites for the Future",
   "profile_titles": [
-    "MERN Developer",
-    "Django Developer",
+    "Full Stack Developer",
+    "Python Developer",
     "React Developer",
     "TypeScript Developer"
   ],
@@ -22,8 +22,12 @@
       "number": 45
     },
     {
-      "label": "Years of experience",
-      "number": 3
+      "label": "Years of work experience",
+      "number": 2
+    },
+    {
+      "label": "Years of field experience",
+      "number": 4
     }
   ],
   "educations": [
