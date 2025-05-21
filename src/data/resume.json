@@ -177,7 +177,7 @@
         "State Management using Redux Toolkit.",
         "Responsive UI built with Tailwind CSS"
       ],
-      "projectLink": "https://rnj-stock.netlify.app",
+      "projectLink": "https://rnj-stock.vercel.app/",
       "projectTechs": [
         "Next JS",
         "Redis",
