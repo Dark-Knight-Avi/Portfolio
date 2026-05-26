@@ -8,14 +8,14 @@
   "resume_pdf": "/cv/Aritra_Karmakar_Resume_FSWD.pdf",
   "name": "Aritra Karmakar",
   "dob": "31/03/2001",
-  "portfolio_hero_text": "Building Scalable Modern Websites for the Future",
+  "portfolio_hero_text": "Shipping Production-Grade Full Stack Systems, End-to-End",
   "profile_titles": [
     "Full Stack Developer",
-    "Python Developer",
-    "React Developer",
-    "TypeScript Developer"
+    "React + TypeScript Engineer",
+    "Python / Flask Engineer",
+    "DevOps & CI/CD"
   ],
-  "profile__summary": "Welcome! My name is Aritra. I'm a highly motivated Full Stack Developer with experience in leading end-to-end software development projects. Skilled in React, Python, DevOps, and data analysis, with a strong foundation in building and deploying scalable applications. Proven ability to work collaboratively in cross-functional teams to deliver high-quality products on time.",
+  "profile__summary": "Welcome! I'm Aritra — a Full Stack Engineer who owns features end-to-end, from PostGIS schema to Flask API to React UI to Nginx config to CI/CD pipeline. I ship and operate a production survey platform at IISc (10K+ households, ISO VAPT-cleared, 39 REST APIs, JWT+2FA auth, Docker Compose, self-hosted GitHub Actions runner) for the Govt. of Karnataka.",
   "about_items": [
     {
       "label": "Project done",
@@ -69,25 +69,26 @@
       "duration": "DEC 2023 - Present",
       "location": "Bangalore",
       "contributions": [
-        "Project Involvement: Collaborating with the IISc research team on the ”City-Scale Travel Demand Model Development” project, funded by the Govt. of India and DULT, Govt. of Karnataka.",
-        "Software Collaboration: Working with the BOSCH software development team to provide timely support, ensuring successful project completion within deadlines and delivering a high-quality product.",
-        "Tool Development: Created a Digital Survey Tool using React and Python Flask. Managed production-level deployment with Nginx server, employing reverse proxy and load balancing techniques.",
-        "Survey Success: Facilitated the accurate surveying of 10,000 households in Bangalore using the tool, ensuring precise data collection.",
-        "Data Analysis: Developed Python scripts for Exploratory Data Analysis and Sanity Checks, ensuring data integrity and quality.",
-        "Tool Testing & Optimization: Led the testing and bug-fixing process for the Aggregate Travel Demand Model, a QGIS plugin tool developed by BOSCH and IISc. Achieved a 40% reduction in runtime, optimizing performance for use by the Government of Karnataka in Bangalore city traffic forecasting and urban development planning."
+        "DST Production Platform: Designed and shipped the Digital Survey Tool (live at surveys.cistup.iisc.ac.in / oshr.cistup.iisc.ac.in) — React 18 + TypeScript frontend, Python Flask + psycopg3 backend, PostgreSQL with PostGIS geospatial schema — serving 10,000+ household surveys across 40+ field enumerators for the Govt. of Karnataka 'City-Scale Travel Demand Model' project (funded by Govt. of India and DULT).",
+        "API & Data Model: Designed 39 REST endpoints with 3-tier RBAC (Admin / Superuser / Enumerator); modeled the survey schema in PostgreSQL + PostGIS and sized the psycopg connection pool against 8 gunicorn workers (min=1 / max=4 per worker → 32 peak connections) for predictable capacity under load.",
+        "Frontend Complexity: Built a 6-page survey form with 16 trip modes, conditional fields, and auto-population from each prior trip's destination; integrated Google Maps Places API (autocomplete + draggable marker + current-location); built a custom SearchableDropdown with 3-tier matching; 15-min cross-tab idle timeout via localStorage events (30s poll, not per-keystroke); token-refresh mutex pattern (proactive setTimeout + reactive 401 interceptor + singleton mutex preventing concurrent /refresh races).",
+        "Auth & Security: Implemented JWT auth (HS256, 15-min access + 7-day rotating refresh tokens, bcrypt-hashed, rotated on every /refresh), mandatory TOTP 2FA via PyOTP for Admin/Superuser, and server-side reCAPTCHA v3 verification.",
+        "DevOps & CI/CD: Productionized with Docker Compose (nginx + flask + postgres on an isolated bridge network) and a GitHub Actions self-hosted runner on a private VPN (cloud runners couldn't reach the network — fixed SELinux blockers with `chcon -t bin_t`, NTP drift with chronyd makestep, used ed25519 deploy keys); zero-downtime deploys via `docker compose up -d --no-deps flask`; SAST (Bandit) + SCA (pip-audit) gated in CI.",
+        "VAPT & Hardening: Cleared the ISO VAPT security audit in a single review round (May 2026 — all 6 findings closed); remediated HTTP Request Smuggling (upgraded Nginx 1.14→1.26 on EOL CentOS 8.5 using dnf module reset, added proxy_http_version 1.1 + empty Connection header); shipped 7 security headers with the `always` flag, HSTS preload-ready, CSP tuned for reCAPTCHA; Nginx rate limits (5/min on auth, 30/min elsewhere) and disabled source maps in the production bundle.",
+        "ATDM Ground-Truth Data: Built a 10-worker Python + Selenium scraper to harvest Google Maps route, travel-time, transit, and fare data across 4 time-of-day windows — generating 2M+ data points over 500K+ trips to estimate and validate the Aggregate Travel Demand Model. Zero infra cost; equivalent to ~₹5.7L (~$6.7k) of Google Directions API spend avoided.",
+        "ATDM Performance: Optimized the Aggregate Travel Demand Model (QGIS plugin built jointly with BOSCH and IISc) by migrating long-running Python modules to C++ via Eigen — delivered 95% runtime reduction for Govt. of Karnataka traffic forecasting and urban planning workloads."
       ],
       "tech_stacks": [
-        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
-        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
-        { "imgSrc": "/images/skills/python.svg", "label": "Python" },
+        { "imgSrc": "/images/skills/typescript.svg", "label": "TypeScript" },
         { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
+        { "imgSrc": "/images/skills/python.svg", "label": "Python" },
         { "imgSrc": "/images/skills/flask.svg", "label": "Flask" },
-        { "imgSrc": "/images/skills/postgresql.svg", "label": "PostgreSQL" },
-        { "imgSrc": "/images/skills/linux.svg", "label": "Linux" },
-        { "imgSrc": "/images/skills/bash.svg", "label": "Shell Scripting" },
-        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" },
+        { "imgSrc": "/images/skills/postgresql.svg", "label": "PostgreSQL / PostGIS" },
+        { "imgSrc": "/images/skills/docker.svg", "label": "Docker Compose" },
         { "imgSrc": "/images/skills/nginx.svg", "label": "Nginx" },
-        { "imgSrc": "/images/skills/docker.svg", "label": "Docker" },
+        { "imgSrc": "/images/skills/github.svg", "label": "GitHub Actions" },
+        { "imgSrc": "/images/skills/linux.svg", "label": "Linux (CentOS)" },
+        { "imgSrc": "/images/skills/bash.svg", "label": "Shell Scripting" },
         { "imgSrc": "/images/skills/pandas.svg", "label": "Pandas" },
         { "imgSrc": "/images/skills/numpy.svg", "label": "NumPy" }
       ],
@@ -101,8 +102,7 @@
       "duration": "DEC 2022 - JAN 2023",
       "location": "Bangalore",
       "contributions": [
-        "Dashboard Maintenance: Collaborated with the Snippets (Product) team to maintain and enhance the OSlash Dashboard.",
-        "Issue Resolution: Successfully resolved 2 major and 1 minorissues in the Product Dashboard using React and TypeScript, improving user experience and functionality."
+        "Resolved 3 product-dashboard issues (2 major + 1 minor) in the OSlash Snippets product using React + TypeScript; contributed fixes to the ProseMirror-based editor."
       ],
       "tech_stacks": [
         { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
@@ -123,9 +123,7 @@
       "duration": "AUG 2021 - MARCH 2022",
       "location": "Bangalore",
       "contributions": [
-        "Website Development: Worked with the R&D (Web Services) team to design and develop a fully responsive E-Commerce website (Zomato clone) using the MERN stack.",
-        "Payment Integration: Integrated Paytm JS Checkout for seamless and secure payment processing.",
-        "User Authentication: Implemented user authentication functionality to enhance security and user experience."
+        "Built a responsive food-delivery web app (Zomato-style) on the MERN stack with the R&D Web Services team; integrated Paytm JS Checkout and user authentication."
       ],
       "tech_stacks": [
         { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
@@ -148,9 +146,7 @@
       "duration": "SEPT 2021 - OCT 2021",
       "location": "Bangalore",
       "contributions": [
-        "Web Application Development: Worked with the R&D (Web Services) team to develop a Video Calling Web Application.",
-        "Backend Integration: Integrated Django Framework in the entire backend and added Audio/Video calling and chatting features using Web Socket.",
-        "User Authentication: Allowed unique userIDs to be generated using the Django Authentication System."
+        "Built a real-time video-calling web app with the R&D team: Django backend + WebSockets for audio/video/chat, Django auth for unique user IDs."
       ],
       "tech_stacks": [
         { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
@@ -184,70 +180,6 @@
         "React Query",
         "Redux",
         "Tailwind CSS"
-      ]
-    },
-    {
-      "projectTitle": "Shoping E-Cart App",
-      "projectTag": "Personal Project",
-      "projectCover": "/images/projects/pr1.jpg",
-      "projectTemplate": "https://raw.githubusercontent.com/Dark-Knight-Avi/Portfolio-MERN/master/src/assets/projects/pr1.png",
-      "projectDesc": [
-        "A Fully featured responsive complete E-Commerce Website that allows users to buy a product, add product to cart, remove from cart, etc.",
-        "Paytm JS Checkout module is used to add a Payment gateway."
-      ],
-      "projectLink": "https://github.com/Dark-Knight-Avi/Shoping-E-Cart-App-using-Strapi-next",
-      "projectTechs": [
-        "JavaScript",
-        "Next JS",
-        "Strapi",
-        "PostgreSQL"
-      ]
-    },
-    {
-      "projectTitle": "Zomato-Clone-App",
-      "projectTag": "Edureka",
-      "projectCover": "/images/projects/pr2.png",
-      "projectTemplate": "https://raw.githubusercontent.com/Dark-Knight-Avi/Portfolio-MERN/master/src/assets/projects/pr2.png",
-      "projectDesc": [
-        "A fully functional responsive front-edge food delivery solution that allows restaurants to start online services and achieve higher revenues."
-      ],
-      "projectLink": "https://github.com/Dark-Knight-Avi/Zomato-Clone-App",
-      "projectTechs": [
-        "JavaScript",
-        "MongoDB",
-        "Express JS",
-        "React JS",
-        "Node JS"
-      ]
-    },
-    {
-      "projectTitle": "Video Calling Web App",
-      "projectTag": "Exposys Data Labs",
-      "projectCover": "/images/projects/pr3.png",
-      "projectTemplate": "https://raw.githubusercontent.com/Dark-Knight-Avi/Portfolio-MERN/master/src/assets/projects/pr3.png",
-      "projectDesc": [
-        "A responsive Video Calling web app, user can create their ID's by SIGNING UP.",
-        "Users need to LOGIN to connect with their friends by entering friend's unique USER ID.",
-        "User can send text messages to each other and call via voice or video."
-      ],
-      "projectLink": "https://github.com/Dark-Knight-Avi/Video_Calling_Web_App",
-      "projectTechs": [
-        "Django",
-        "Web Socket"
-      ]
-    },
-    {
-      "projectTitle": "Sorting Algorithm Visualizer using React JS",
-      "projectTag": "Personal Project",
-      "projectCover": "/images/projects/pr4.png",
-      "projectTemplate": "https://raw.githubusercontent.com/Dark-Knight-Avi/Portfolio-MERN/master/src/assets/projects/pr4.png",
-      "projectDesc": [
-        "Sorting Algorithm Visualizer built with React JS."
-      ],
-      "projectLink": "https://sorting-visualizer-aritra.netlify.app/",
-      "projectTechs": [
-        "JavaScript",
-        "React JS"
       ]
     },
     {
@@ -439,15 +371,9 @@
           "icon": "/images/skills/tailwindcss.svg"
         },
         {
-          "skill": "Django",
-          "skill_prof": 80,
-          "desc": "Web Backend",
-          "icon": "/images/skills/django.svg"
-        },
-        {
           "skill": "Flask",
-          "skill_prof": 75,
-          "desc": "Web Backend",
+          "skill_prof": 85,
+          "desc": "Production Python Backend",
           "icon": "/images/skills/flask.svg"
         },
         {
@@ -569,16 +495,26 @@
       "Effective Communication",
       "Adaptability and Flexibility"
     ],
-    "Technology skill proficiencies": [
-      "Adaptability and Flexibility",
-      "Problem-Solving and Critical Thinking"
-    ],
-    "Hobbies": [
-      "Playing Cricket",
-      "Listening Audio Stories"
+    "Engineering practices": [
+      "End-to-End Feature Ownership",
+      "Production Incident Response",
+      "Security Hardening (VAPT remediation)",
+      "Code Review and Mentorship",
+      "System Design Tradeoffs"
     ]
   },
   "achievments": [
+    {
+      "ach__id": "ach2",
+      "ach__title": "ISO VAPT SECURITY CLEARANCE",
+      "ach__place": "CISTUP@IISc — DST Production Platform",
+      "ach__date": "May 2026",
+      "ach__contributions": [
+        "Cleared external ISO Vulnerability Assessment and Penetration Testing audit in a single review round.",
+        "Closed all 6 findings: HTTP Request Smuggling (Nginx 1.14→1.26 upgrade on EOL CentOS 8.5), missing security headers (HSTS preload + CSP + 5 others with `always` flag), and source-map exposure.",
+        "Production system (surveys.cistup.iisc.ac.in) approved for Govt. of Karnataka deployment."
+      ]
+    },
     {
       "ach__id": "ach1",
       "ach__title": "SMART INDIA HACKATHON 2022",
@@ -587,7 +523,7 @@
       "ach__contributions": [
         "Got Selected in Grand Finale of SIH 2022.",
         "Worked on ”Indigenous Monitoring Communication Receiver” project.",
-        "Handled the Simulation of the Superheterodyne Receiverin MATLAB."
+        "Handled the Simulation of the Superheterodyne Receiver in MATLAB."
       ]
     }
   ],
