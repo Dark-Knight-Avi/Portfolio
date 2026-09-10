@@ -10,12 +10,12 @@
   "dob": "31/03/2001",
   "portfolio_hero_text": "Shipping Production-Grade Full Stack Systems, End-to-End",
   "profile_titles": [
-    "Full Stack Developer",
+    "Senior Full Stack Developer",
     "React + TypeScript Engineer",
-    "Python / Flask Engineer",
-    "DevOps & CI/CD"
+    "Python / FastAPI / Flask Engineer",
+    "DevOps, Observability & Performance"
   ],
-  "profile__summary": "Welcome! I'm Aritra — a Full Stack Engineer who owns features end-to-end, from PostGIS schema to Flask API to React UI to Nginx config to CI/CD pipeline. I ship and operate a production survey platform at IISc (10K+ households, ISO VAPT-cleared, 39 REST APIs, JWT+2FA auth, Docker Compose, self-hosted GitHub Actions runner) for the Govt. of Karnataka.",
+  "profile__summary": "Welcome! I'm Aritra — a Senior Full Stack Developer at IISc who owns products end to end, from PostGIS schema to FastAPI/Flask service to React UI to Nginx config to CI/CD pipeline. I was the sole founding architect of a city-scale engineering programme, was promoted to Senior after delivering five platforms ahead of schedule, and now lead a 3-developer team. I drop below the web tier when the runtime demands it — migrating long-running Python to C++/Eigen for 95% faster runtime, and rearchitecting a 2.16-billion-row aggregation to run 6.7× faster with byte-identical output.",
   "about_items": [
     {
       "label": "Project done",
@@ -23,18 +23,18 @@
     },
     {
       "label": "Years of work experience",
-      "number": 2
+      "number": 3
     },
     {
       "label": "Years of field experience",
-      "number": 4
+      "number": 5
     }
   ],
   "educations": [
     {
       "ed__id": "ed3",
       "ed__inst": "VISVESVARAYA TECHNOLOGICAL UNIVERSITY",
-      "ed__qualification": "B.E in Information Technology",
+      "ed__qualification": "B.E in Information Science and Engineering",
       "ed__duration": "Aug 2019 - June 2023",
       "ed__inst_place": "Belagavi, Karnataka",
       "ed__inst_sub": "HKBK College of Engineering, Bangalore",
@@ -64,33 +64,166 @@
     {
       "companyName": "CISTUP@IISc",
       "companyLogo": "/images/experience/IISc_logo.jpg",
-      "role": "Full-stack Developer (SDE)",
+      "role": "Senior Full Stack Developer",
       "type": "Full Time",
-      "duration": "DEC 2023 - Present",
+      "duration": "AUG 2026 - Present",
       "location": "Bangalore",
       "contributions": [
-        "DST Production Platform: Designed and shipped the Digital Survey Tool (live at surveys.cistup.iisc.ac.in / oshr.cistup.iisc.ac.in) — React 18 + TypeScript frontend, Python Flask + psycopg3 backend, PostgreSQL with PostGIS geospatial schema — serving 10,000+ household surveys across 40+ field enumerators for the Govt. of Karnataka 'City-Scale Travel Demand Model' project (funded by Govt. of India and DULT).",
-        "API & Data Model: Designed 39 REST endpoints with 3-tier RBAC (Admin / Superuser / Enumerator); modeled the survey schema in PostgreSQL + PostGIS and sized the psycopg connection pool against 8 gunicorn workers (min=1 / max=4 per worker → 32 peak connections) for predictable capacity under load.",
-        "Frontend Complexity: Built a 6-page survey form with 16 trip modes, conditional fields, and auto-population from each prior trip's destination; integrated Google Maps Places API (autocomplete + draggable marker + current-location); built a custom SearchableDropdown with 3-tier matching; 15-min cross-tab idle timeout via localStorage events (30s poll, not per-keystroke); token-refresh mutex pattern (proactive setTimeout + reactive 401 interceptor + singleton mutex preventing concurrent /refresh races).",
-        "Auth & Security: Implemented JWT auth (HS256, 15-min access + 7-day rotating refresh tokens, bcrypt-hashed, rotated on every /refresh), mandatory TOTP 2FA via PyOTP for Admin/Superuser, and server-side reCAPTCHA v3 verification.",
-        "DevOps & CI/CD: Productionized with Docker Compose (nginx + flask + postgres on an isolated bridge network) and a GitHub Actions self-hosted runner on a private VPN (cloud runners couldn't reach the network — fixed SELinux blockers with `chcon -t bin_t`, NTP drift with chronyd makestep, used ed25519 deploy keys); zero-downtime deploys via `docker compose up -d --no-deps flask`; SAST (Bandit) + SCA (pip-audit) gated in CI.",
-        "VAPT & Hardening: Cleared the ISO VAPT security audit in a single review round (May 2026 — all 6 findings closed); remediated HTTP Request Smuggling (upgraded Nginx 1.14→1.26 on EOL CentOS 8.5 using dnf module reset, added proxy_http_version 1.1 + empty Connection header); shipped 7 security headers with the `always` flag, HSTS preload-ready, CSP tuned for reCAPTCHA; Nginx rate limits (5/min on auth, 30/min elsewhere) and disabled source maps in the production bundle.",
-        "ATDM Ground-Truth Data: Built a 10-worker Python + Selenium scraper to harvest Google Maps route, travel-time, transit, and fare data across 4 time-of-day windows — generating 2M+ data points over 500K+ trips to estimate and validate the Aggregate Travel Demand Model. Zero infra cost; equivalent to ~₹5.7L (~$6.7k) of Google Directions API spend avoided.",
-        "ATDM Performance: Optimized the Aggregate Travel Demand Model (QGIS plugin built jointly with BOSCH and IISc) by migrating long-running Python modules to C++ via Eigen — delivered 95% runtime reduction for Govt. of Karnataka traffic forecasting and urban planning workloads."
+        "Engineering Leadership: Lead a 3-developer team across a polyglot TypeScript, Python and C++ codebase — 100% code-review coverage on every pull request before merge, with SOLID boundaries, strict typing and test coverage set as the team standard.",
+        "Technical Hiring: Own the technical interview round for full-time developer hiring on my own team and for two further project teams; design scenario-based questions drawn from live project requirements, and ran one full-time position end to end from resume shortlist through technical assessment to hire.",
+        "Delivery Planning: Draft the requirements and run sprint-driven planning that kept five city-scale platforms landing on or ahead of schedule, breaking research goals into deliverables the team can estimate and commit to.",
+        "Architecture Governance: Authored the project's first Architecture Decision Record and a 5-stack × 19-dimension technology decision matrix (Tauri+React+FastAPI against C++/Qt, Java, PySide6 and .NET) to justify the desktop architecture before a line was written.",
+        "M3DM Desktop Product: Owned architecture and led the 3-developer delivery of a four-tier Windows desktop product replacing a QGIS-and-WSL toolchain — React + strict TypeScript + Tauri (Rust) shell over a 78-route FastAPI service and five native C++/CUDA engines, shipped as a code-signed offline installer needing no Python, Node, Rust or WSL on the target machine.",
+        "M3DM Performance: Rearchitected a matrix-aggregation stage from 104 DuckDB queries re-scanning 17.3 GB / 2.16 billion rows into a single-pass accumulation — 1,094s to 162.8s, 6.7× faster at parity 0.0 across all 416 datasets; diagnosed a GIL-contention stall starving the Uvicorn event loop and moved it to a dedicated subprocess for a further 2.75×.",
+        "Cross-Team Direction: Set technical direction for two further project teams and translate DULT and BOSCH stakeholder requirements into delivery scope, sequencing and architecture.",
+        "Enablement: Train engineers and researchers on Python multiprocessing, columnar Parquet and DuckDB SQL, replacing slow iterative Pandas scripts with sub-second out-of-core scans over multi-million-row datasets."
       ],
       "tech_stacks": [
-        { "imgSrc": "/images/skills/typescript.svg", "label": "TypeScript" },
-        { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
-        { "imgSrc": "/images/skills/python.svg", "label": "Python" },
-        { "imgSrc": "/images/skills/flask.svg", "label": "Flask" },
-        { "imgSrc": "/images/skills/postgresql.svg", "label": "PostgreSQL / PostGIS" },
-        { "imgSrc": "/images/skills/docker.svg", "label": "Docker Compose" },
-        { "imgSrc": "/images/skills/nginx.svg", "label": "Nginx" },
-        { "imgSrc": "/images/skills/github.svg", "label": "GitHub Actions" },
-        { "imgSrc": "/images/skills/linux.svg", "label": "Linux (CentOS)" },
-        { "imgSrc": "/images/skills/bash.svg", "label": "Shell Scripting" },
-        { "imgSrc": "/images/skills/pandas.svg", "label": "Pandas" },
-        { "imgSrc": "/images/skills/numpy.svg", "label": "NumPy" }
+        {
+          "imgSrc": "/images/skills/react.svg",
+          "label": "React JS"
+        },
+        {
+          "imgSrc": "/images/skills/typescript.svg",
+          "label": "TypeScript"
+        },
+        {
+          "imgSrc": "/images/skills/tauri.svg",
+          "label": "Tauri"
+        },
+        {
+          "imgSrc": "/images/skills/rust.svg",
+          "label": "Rust"
+        },
+        {
+          "imgSrc": "/images/skills/fastapi.svg",
+          "label": "FastAPI"
+        },
+        {
+          "imgSrc": "/images/skills/python.svg",
+          "label": "Python"
+        },
+        {
+          "imgSrc": "/images/skills/cplusplus.svg",
+          "label": "C++"
+        },
+        {
+          "imgSrc": "/images/skills/cuda.svg",
+          "label": "CUDA"
+        },
+        {
+          "imgSrc": "/images/skills/duckdb.svg",
+          "label": "DuckDB"
+        },
+        {
+          "imgSrc": "/images/skills/parquet.svg",
+          "label": "Parquet"
+        },
+        {
+          "imgSrc": "/images/skills/vite.svg",
+          "label": "Vite"
+        },
+        {
+          "imgSrc": "/images/skills/github.svg",
+          "label": "GitHub"
+        }
+      ],
+      "verifyLink": "https://cistup.iisc.ac.in/CiSTUP_Website/pages/people/research-staff1.php#:~:text=Networks%2C%20Machine%20learning.-,Mr.%20Aritra%20Karmakar,-Designation%3A%20Full"
+    },
+    {
+      "companyName": "CISTUP@IISc",
+      "companyLogo": "/images/experience/IISc_logo.jpg",
+      "role": "Full Stack Developer (SDE)",
+      "type": "Full Time",
+      "duration": "DEC 2023 - AUG 2026",
+      "location": "Bangalore",
+      "contributions": [
+        "DST Production Platform: Designed and shipped the Digital Survey Tool (live at surveys.cistup.iisc.ac.in) — React + TypeScript frontend, Python Flask + psycopg3 backend, PostgreSQL with PostGIS geospatial schema — serving 10,000+ household surveys across 40+ field users for the Govt. of Karnataka 'City-Scale Travel Demand Model' project funded by Govt. of India and DULT.",
+        "API & Data Model: Designed 39 REST endpoints with 3-tier RBAC (Admin / Superuser / Enumerator); modeled the schema in PostgreSQL + PostGIS and sized the psycopg connection pool against 8 gunicorn workers (min=1 / max=4 per worker → 32 peak connections) for predictable capacity under load.",
+        "Frontend Complexity: Built a 6-page conditional form engine whose 16 routing branches govern field visibility and auto-populate sequential entries across a 3-level nested entity hierarchy, cutting redundant data entry ~70%; chose Context + useReducer over Redux to save ~14 KB gzipped; custom SearchableDropdown with 3-tier matching; 15-min cross-tab idle timeout via localStorage events polling every 30s rather than per keystroke.",
+        "Auth & Security: Designed a token-refresh mutex from a reactive 401 interceptor and singleton promise that ended concurrent refresh races logging users out mid-form; JWT (HS256, 15-min access + 7-day rotating refresh, bcrypt-hashed), mandatory TOTP 2FA via PyOTP for elevated roles, and server-side reCAPTCHA v3 verification.",
+        "VAPT & Hardening: Cleared the ISO VAPT security audit in two rounds (May 2026 — all 6 findings closed); remediated HTTP Request Smuggling (Nginx 1.14→1.26 on EOL CentOS 8.5), shipped 7 security headers with the always flag, HSTS preload-ready, CSP tuned for reCAPTCHA, rate limits (5/min on auth) and disabled production source maps.",
+        "Observability Platform: Built a solo, end-to-end 4-pillar observability stack (metrics, logs, traces, errors) as Docker Compose services on a private VPN — Prometheus + Grafana dashboards and alerting, OpenTelemetry into Tempo down to per-query spans, Loki centralised logs and self-hosted GlitchTip — solving multi-worker metric fragmentation via Prometheus multiprocess mode across 8 forked gunicorn workers, and replacing SSH-and-grep debugging with self-serve dashboards.",
+        "DevOps & CI/CD: Productionised with Docker Compose (nginx + flask + postgres on an isolated bridge network) and a GitHub Actions self-hosted runner on a private VPN — fixed SELinux blockers with chcon -t bin_t and NTP drift with chronyd makestep; zero-downtime deploys with health gating and automatic rollback; SAST (Bandit) + SCA (pip-audit) gated in CI.",
+        "Routing Data Pipeline: Made the build-vs-buy call and wrote a 10-worker threaded Python + Selenium pipeline extracting ~5M data points across 500K+ journey records over 4 time-of-day windows — the calibration and validation dataset the model could not otherwise be estimated against, at zero infra cost and ~₹5.7L of paid-API spend avoided.",
+        "ATDM & DTDM Plugins: Guided a 5-engineer team through the full SDLC on two desktop GIS modelling plugins as software SME — requirement specifications, architecture artifacts and test plans, lifting integration speed 30% by standardising environments; migrated long-running Python modules to C++ with Eigen for 95% faster runtime and 80% lower memory; built an out-of-core DuckDB pipeline over billion-row datasets, 90% faster; cut plugin crash rates 90%.",
+        "Analytics Dashboards: Developed a 29-page visualisation dashboard (Flask, Vanilla JS, Chart.js, Folium heatmaps) driven by strict JSON contracts, 80% faster to load after replacing in-tool aggregation with DuckDB; architected real-time admin dashboards with live progress, per-user throughput and status heatmaps with Excel export.",
+        "Field Operations: Trained a 40-member operations team and ran live triage across 8 months of ongoing production use; automated the post-collection analyst workflow in Python, removing 85% of manual effort and freeing roughly two analyst-weeks per cycle.",
+        "Vendor Codebase Ownership: Took ownership of a BOSCH-developed survey tool, ran a three-phase sanity-check analysis on pilot data and reported 13 tool-level defects plus 61 field-level issues; when the vendor declined to fix their own tool, resolved the defects directly — eliminating a submission race across an eight-step questionnaire, hardening GPS capture on low-end devices, fixing roster validation — and fed the decision to replace it with the in-house DST."
+      ],
+      "tech_stacks": [
+        {
+          "imgSrc": "/images/skills/typescript.svg",
+          "label": "TypeScript"
+        },
+        {
+          "imgSrc": "/images/skills/react.svg",
+          "label": "React JS"
+        },
+        {
+          "imgSrc": "/images/skills/python.svg",
+          "label": "Python"
+        },
+        {
+          "imgSrc": "/images/skills/flask.svg",
+          "label": "Flask"
+        },
+        {
+          "imgSrc": "/images/skills/postgresql.svg",
+          "label": "PostgreSQL / PostGIS"
+        },
+        {
+          "imgSrc": "/images/skills/duckdb.svg",
+          "label": "DuckDB"
+        },
+        {
+          "imgSrc": "/images/skills/docker.svg",
+          "label": "Docker Compose"
+        },
+        {
+          "imgSrc": "/images/skills/nginx.svg",
+          "label": "Nginx"
+        },
+        {
+          "imgSrc": "/images/skills/github.svg",
+          "label": "GitHub Actions"
+        },
+        {
+          "imgSrc": "/images/skills/gitlab.svg",
+          "label": "GitLab"
+        },
+        {
+          "imgSrc": "/images/skills/prometheus.svg",
+          "label": "Prometheus"
+        },
+        {
+          "imgSrc": "/images/skills/grafana.svg",
+          "label": "Grafana"
+        },
+        {
+          "imgSrc": "/images/skills/selenium.svg",
+          "label": "Selenium"
+        },
+        {
+          "imgSrc": "/images/skills/cplusplus.svg",
+          "label": "C++"
+        },
+        {
+          "imgSrc": "/images/skills/linux.svg",
+          "label": "Linux (CentOS)"
+        },
+        {
+          "imgSrc": "/images/skills/bash.svg",
+          "label": "Shell Scripting"
+        },
+        {
+          "imgSrc": "/images/skills/pandas.svg",
+          "label": "Pandas"
+        },
+        {
+          "imgSrc": "/images/skills/numpy.svg",
+          "label": "NumPy"
+        }
       ],
       "verifyLink": "https://cistup.iisc.ac.in/CiSTUP_Website/pages/people/research-staff1.php#:~:text=Networks%2C%20Machine%20learning.-,Mr.%20Aritra%20Karmakar,-Designation%3A%20Full"
     },
@@ -105,13 +238,34 @@
         "Resolved 3 product-dashboard issues (2 major + 1 minor) in the OSlash Snippets product using React + TypeScript; contributed fixes to the ProseMirror-based editor."
       ],
       "tech_stacks": [
-        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
-        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
-        { "imgSrc": "/images/skills/tailwindcss.svg", "label": "Tailwind CSS" },
-        { "imgSrc": "/images/skills/typescript.svg", "label": "TypeScript" },
-        { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
-        { "imgSrc": "/images/skills/nextjs.svg", "label": "Next JS" },
-        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" }
+        {
+          "imgSrc": "/images/skills/javascript.svg",
+          "label": "JavaScript"
+        },
+        {
+          "imgSrc": "/images/skills/css3.svg",
+          "label": "CSS"
+        },
+        {
+          "imgSrc": "/images/skills/tailwindcss.svg",
+          "label": "Tailwind CSS"
+        },
+        {
+          "imgSrc": "/images/skills/typescript.svg",
+          "label": "TypeScript"
+        },
+        {
+          "imgSrc": "/images/skills/react.svg",
+          "label": "React JS"
+        },
+        {
+          "imgSrc": "/images/skills/nextjs.svg",
+          "label": "Next JS"
+        },
+        {
+          "imgSrc": "/images/skills/github.svg",
+          "label": "GitHub"
+        }
       ],
       "verifyLink": "/images/experienceCertificates/OSlash.pdf"
     },
@@ -126,15 +280,42 @@
         "Built a responsive food-delivery web app (Zomato-style) on the MERN stack with the R&D Web Services team; integrated Paytm JS Checkout and user authentication."
       ],
       "tech_stacks": [
-        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
-        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
-        { "imgSrc": "/images/skills/tailwindcss.svg", "label": "Tailwind CSS" },
-        { "imgSrc": "/images/skills/typescript.svg", "label": "TypeScript" },
-        { "imgSrc": "/images/skills/react.svg", "label": "React JS" },
-        { "imgSrc": "/images/skills/mongodb.svg", "label": "MongoDB" },
-        { "imgSrc": "/images/skills/expressjs.svg", "label": "Express.js" },
-        { "imgSrc": "/images/skills/nodejs.svg", "label": "Node JS" },
-        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" }
+        {
+          "imgSrc": "/images/skills/javascript.svg",
+          "label": "JavaScript"
+        },
+        {
+          "imgSrc": "/images/skills/css3.svg",
+          "label": "CSS"
+        },
+        {
+          "imgSrc": "/images/skills/tailwindcss.svg",
+          "label": "Tailwind CSS"
+        },
+        {
+          "imgSrc": "/images/skills/typescript.svg",
+          "label": "TypeScript"
+        },
+        {
+          "imgSrc": "/images/skills/react.svg",
+          "label": "React JS"
+        },
+        {
+          "imgSrc": "/images/skills/mongodb.svg",
+          "label": "MongoDB"
+        },
+        {
+          "imgSrc": "/images/skills/expressjs.svg",
+          "label": "Express.js"
+        },
+        {
+          "imgSrc": "/images/skills/nodejs.svg",
+          "label": "Node JS"
+        },
+        {
+          "imgSrc": "/images/skills/github.svg",
+          "label": "GitHub"
+        }
       ],
       "verifyLink": "https://www.edureka.co/certificates/mycertificate/1b197baf15d24c0a8c9f8b9429e0a021"
     },
@@ -149,17 +330,78 @@
         "Built a real-time video-calling web app with the R&D team: Django backend + WebSockets for audio/video/chat, Django auth for unique user IDs."
       ],
       "tech_stacks": [
-        { "imgSrc": "/images/skills/javascript.svg", "label": "JavaScript" },
-        { "imgSrc": "/images/skills/css3.svg", "label": "CSS" },
-        { "imgSrc": "/images/skills/python.svg", "label": "Python" },
-        { "imgSrc": "/images/skills/django.svg", "label": "Django" },
-        { "imgSrc": "/images/skills/github.svg", "label": "GitHub" },
-        { "imgSrc": "/images/skills/nginx.svg", "label": "Nginx" }
+        {
+          "imgSrc": "/images/skills/javascript.svg",
+          "label": "JavaScript"
+        },
+        {
+          "imgSrc": "/images/skills/css3.svg",
+          "label": "CSS"
+        },
+        {
+          "imgSrc": "/images/skills/python.svg",
+          "label": "Python"
+        },
+        {
+          "imgSrc": "/images/skills/django.svg",
+          "label": "Django"
+        },
+        {
+          "imgSrc": "/images/skills/github.svg",
+          "label": "GitHub"
+        },
+        {
+          "imgSrc": "/images/skills/nginx.svg",
+          "label": "Nginx"
+        }
       ],
       "verifyLink": "/images/experienceCertificates/Exposys_Data_Labs_Certificate.pdf"
     }
   ],
   "projects": [
+    {
+      "projectTitle": "On-Premise Multi-Agent AI Platform",
+      "projectTag": "Bespoke Initiative",
+      "projectCover": "/images/projects/pr10.png",
+      "projectTemplate": "/images/projects/pr10.png",
+      "projectDesc": [
+        "Unfunded initiative to stand up a GPU-backed multi-agent platform for the team.",
+        "MCP tool bridges into DuckDB, PostGIS and Parquet for autonomous querying.",
+        "Zero-cost alternative to commercial AI subscriptions, keeping sensitive data and proprietary code on site.",
+        "Automated analytical workflows for senior researchers — data cleaning, vision-based document extraction and literature retrieval — cutting manual processing from days to minutes."
+      ],
+      "projectLink": "",
+      "projectTechs": [
+        "PyTorch",
+        "CUDA",
+        "MCP",
+        "RAG",
+        "FastAPI",
+        "DuckDB"
+      ]
+    },
+    {
+      "projectTitle": "Cloud-Based Collaborative IDE",
+      "projectTag": "Personal Project",
+      "projectCover": "/images/projects/pr11.png",
+      "projectTemplate": "/images/projects/pr11.png",
+      "projectDesc": [
+        "VS Code-style browser IDE pairing the Monaco editor with a Socket.io-driven xTerm.js terminal.",
+        "Isolated, auth-gated per-user backend sessions over Node.js and Express.",
+        "Dynamic file tree wired to server-side Chokidar watchers through the socket bridge.",
+        "Editor state persisted via Context + useReducer and localStorage so a session survives a browser reload."
+      ],
+      "projectLink": "https://github.com/Dark-Knight-Avi/Cloud-IDE",
+      "projectTechs": [
+        "React JS",
+        "TypeScript",
+        "Monaco",
+        "Socket.io",
+        "xTerm.js",
+        "Node JS",
+        "Express.js"
+      ]
+    },
     {
       "projectTitle": "Inventory Management Web App",
       "projectTag": "Personal Project",
@@ -251,38 +493,38 @@
       "desc": "From scripting dynamic user interfaces to building scalable backend logic, these languages are my everyday tools of expression.",
       "list": [
         {
+          "skill": "TypeScript",
+          "skill_prof": 92,
+          "desc": "Frontend Engineering",
+          "icon": "/images/skills/typescript.svg"
+        },
+        {
           "skill": "JavaScript",
           "skill_prof": 90,
           "desc": "Web Development",
           "icon": "/images/skills/javascript.svg"
         },
         {
-          "skill": "TypeScript",
-          "skill_prof": 90,
-          "desc": "Frontend Engineering",
-          "icon": "/images/skills/typescript.svg"
-        },
-        {
-          "skill": "Java",
-          "skill_prof": 70,
-          "desc": "Enterprise Applications",
-          "icon": "/images/skills/java.svg"
-        },
-        {
           "skill": "Python",
-          "skill_prof": 70,
-          "desc": "Data Science",
+          "skill_prof": 90,
+          "desc": "Backend & Data Engineering",
           "icon": "/images/skills/python.svg"
         },
         {
           "skill": "SQL",
-          "skill_prof": 95,
+          "skill_prof": 92,
           "desc": "Database Query",
           "icon": "/images/skills/sql.svg"
         },
         {
+          "skill": "C++",
+          "skill_prof": 75,
+          "desc": "High-Performance Computing",
+          "icon": "/images/skills/cplusplus.svg"
+        },
+        {
           "skill": "Shell Scripting",
-          "skill_prof": 90,
+          "skill_prof": 85,
           "desc": "Automation",
           "icon": "/images/skills/bash.svg"
         }
@@ -294,27 +536,27 @@
       "list": [
         {
           "skill": "GitHub",
-          "skill_prof": 80,
-          "desc": "Version Control",
+          "skill_prof": 88,
+          "desc": "Version Control & Actions",
           "icon": "/images/skills/github.svg"
         },
         {
+          "skill": "GitLab",
+          "skill_prof": 75,
+          "desc": "Vendor Codebase & CI",
+          "icon": "/images/skills/gitlab.svg"
+        },
+        {
           "skill": "Linux",
-          "skill_prof": 95,
+          "skill_prof": 90,
           "desc": "System Administration",
           "icon": "/images/skills/linux.svg"
         },
         {
           "skill": "VS Code",
-          "skill_prof": 95,
+          "skill_prof": 92,
           "desc": "Code Editing",
           "icon": "/images/skills/vscode.svg"
-        },
-        {
-          "skill": "IntelliJ IDEA",
-          "skill_prof": 75,
-          "desc": "Java Development",
-          "icon": "/images/skills/intellij-idea.svg"
         }
       ]
     },
@@ -324,21 +566,45 @@
       "list": [
         {
           "skill": "React JS",
-          "skill_prof": 90,
+          "skill_prof": 92,
           "desc": "Frontend Development",
           "icon": "/images/skills/react.svg"
         },
         {
           "skill": "Next JS",
-          "skill_prof": 95,
+          "skill_prof": 88,
           "desc": "Fullstack Framework",
           "icon": "/images/skills/nextjs.svg"
         },
         {
-          "skill": "Next Auth",
+          "skill": "FastAPI",
+          "skill_prof": 88,
+          "desc": "Async Python APIs",
+          "icon": "/images/skills/fastapi.svg"
+        },
+        {
+          "skill": "Flask",
+          "skill_prof": 88,
+          "desc": "Production Python Backend",
+          "icon": "/images/skills/flask.svg"
+        },
+        {
+          "skill": "Node JS",
+          "skill_prof": 78,
+          "desc": "Backend Development",
+          "icon": "/images/skills/nodejs.svg"
+        },
+        {
+          "skill": "Express.js",
           "skill_prof": 80,
-          "desc": "Authentication",
-          "icon": "/images/skills/nextauth.svg"
+          "desc": "Backend Routing",
+          "icon": "/images/skills/expressjs.svg"
+        },
+        {
+          "skill": "Tailwind CSS",
+          "skill_prof": 92,
+          "desc": "Utility Styling",
+          "icon": "/images/skills/tailwindcss.svg"
         },
         {
           "skill": "Redux",
@@ -348,45 +614,21 @@
         },
         {
           "skill": "React Query",
-          "skill_prof": 80,
+          "skill_prof": 82,
           "desc": "Data Fetching",
           "icon": "/images/skills/react-query.svg"
         },
         {
-          "skill": "Node JS",
-          "skill_prof": 80,
-          "desc": "Backend Development",
-          "icon": "/images/skills/nodejs.svg"
+          "skill": "Tauri",
+          "skill_prof": 78,
+          "desc": "Cross-Platform Desktop",
+          "icon": "/images/skills/tauri.svg"
         },
         {
-          "skill": "Express.js",
-          "skill_prof": 90,
-          "desc": "Backend Routing",
-          "icon": "/images/skills/expressjs.svg"
-        },
-        {
-          "skill": "Tailwind CSS",
-          "skill_prof": 95,
-          "desc": "Utility Styling",
-          "icon": "/images/skills/tailwindcss.svg"
-        },
-        {
-          "skill": "Flask",
-          "skill_prof": 85,
-          "desc": "Production Python Backend",
-          "icon": "/images/skills/flask.svg"
-        },
-        {
-          "skill": "Bootstrap",
-          "skill_prof": 95,
-          "desc": "Responsive Design",
-          "icon": "/images/skills/bootstrap.svg"
-        },
-        {
-          "skill": "NumPy",
-          "skill_prof": 80,
-          "desc": "Scientific Computing",
-          "icon": "/images/skills/numpy.svg"
+          "skill": "Vite",
+          "skill_prof": 88,
+          "desc": "Build Tooling",
+          "icon": "/images/skills/vite.svg"
         },
         {
           "skill": "Pandas",
@@ -395,16 +637,34 @@
           "icon": "/images/skills/pandas.svg"
         },
         {
+          "skill": "NumPy",
+          "skill_prof": 82,
+          "desc": "Scientific Computing",
+          "icon": "/images/skills/numpy.svg"
+        },
+        {
           "skill": "Socket.io",
           "skill_prof": 80,
           "desc": "Real-time Communication",
           "icon": "/images/skills/socketio.svg"
         },
         {
+          "skill": "Selenium",
+          "skill_prof": 82,
+          "desc": "Browser Automation",
+          "icon": "/images/skills/selenium.svg"
+        },
+        {
           "skill": "Jest",
-          "skill_prof": 75,
+          "skill_prof": 72,
           "desc": "Testing",
           "icon": "/images/skills/jest.svg"
+        },
+        {
+          "skill": "Pytest",
+          "skill_prof": 78,
+          "desc": "Python Testing",
+          "icon": "/images/skills/pytest.svg"
         }
       ]
     },
@@ -413,22 +673,22 @@
       "desc": "Databases, cloud, devops, and everything in between — these technologies fuel the systems behind the screens, optimized for impact.",
       "list": [
         {
-          "skill": "Postman",
-          "skill_prof": 95,
-          "desc": "API Testing",
-          "icon": "/images/skills/postman.svg"
+          "skill": "PostgreSQL",
+          "skill_prof": 88,
+          "desc": "Advanced Database + PostGIS",
+          "icon": "/images/skills/postgresql.svg"
         },
         {
-          "skill": "MongoDB",
+          "skill": "DuckDB",
+          "skill_prof": 90,
+          "desc": "Out-of-Core Analytics",
+          "icon": "/images/skills/duckdb.svg"
+        },
+        {
+          "skill": "Parquet",
           "skill_prof": 85,
-          "desc": "NoSQL Database",
-          "icon": "/images/skills/mongodb.svg"
-        },
-        {
-          "skill": "MySQL",
-          "skill_prof": 95,
-          "desc": "Relational Database",
-          "icon": "/images/skills/mysql.svg"
+          "desc": "Columnar Storage",
+          "icon": "/images/skills/parquet.svg"
         },
         {
           "skill": "Redis",
@@ -437,52 +697,64 @@
           "icon": "/images/skills/redis.svg"
         },
         {
+          "skill": "MongoDB",
+          "skill_prof": 78,
+          "desc": "NoSQL Database",
+          "icon": "/images/skills/mongodb.svg"
+        },
+        {
           "skill": "Prisma",
-          "skill_prof": 85,
+          "skill_prof": 80,
           "desc": "ORM Mapping",
           "icon": "/images/skills/prisma.svg"
         },
         {
-          "skill": "PostgreSQL",
-          "skill_prof": 85,
-          "desc": "Advanced Database",
-          "icon": "/images/skills/postgresql.svg"
-        },
-        {
-          "skill": "GraphQL",
-          "skill_prof": 70,
-          "desc": "API Query Language",
-          "icon": "/images/skills/graphql.svg"
-        },
-        {
-          "skill": "AWS",
-          "skill_prof": 75,
-          "desc": "Cloud Services",
-          "icon": "/images/skills/aws.svg"
-        },
-        {
-          "skill": "GitLab",
-          "skill_prof": 70,
-          "desc": "Automation Pipeline",
-          "icon": "/images/skills/gitlab.svg"
-        },
-        {
-          "skill": "Kubernetes",
-          "skill_prof": 65,
-          "desc": "Container Orchestration",
-          "icon": "/images/skills/kubernetes.svg"
-        },
-        {
           "skill": "Docker",
-          "skill_prof": 80,
+          "skill_prof": 85,
           "desc": "Containerization",
           "icon": "/images/skills/docker.svg"
         },
         {
           "skill": "Nginx",
-          "skill_prof": 70,
-          "desc": "Web Server",
+          "skill_prof": 82,
+          "desc": "Web Server & Hardening",
           "icon": "/images/skills/nginx.svg"
+        },
+        {
+          "skill": "AWS",
+          "skill_prof": 72,
+          "desc": "Cloud Services",
+          "icon": "/images/skills/aws.svg"
+        },
+        {
+          "skill": "Prometheus",
+          "skill_prof": 82,
+          "desc": "Metrics & Alerting",
+          "icon": "/images/skills/prometheus.svg"
+        },
+        {
+          "skill": "Grafana",
+          "skill_prof": 82,
+          "desc": "Dashboards",
+          "icon": "/images/skills/grafana.svg"
+        },
+        {
+          "skill": "OpenTelemetry",
+          "skill_prof": 78,
+          "desc": "Distributed Tracing",
+          "icon": "/images/skills/opentelemetry.svg"
+        },
+        {
+          "skill": "CUDA",
+          "skill_prof": 70,
+          "desc": "GPU Acceleration",
+          "icon": "/images/skills/cuda.svg"
+        },
+        {
+          "skill": "Postman",
+          "skill_prof": 90,
+          "desc": "API Testing",
+          "icon": "/images/skills/postman.svg"
         }
       ]
     }
@@ -497,13 +769,28 @@
     ],
     "Engineering practices": [
       "End-to-End Feature Ownership",
-      "Production Incident Response",
+      "Architecture Decision Records & Design Review",
+      "Code Review Governance and Mentorship",
+      "Technical Hiring and Interview Design",
+      "Sprint Planning and Requirements Drafting",
+      "Production Incident Response and Root-Cause Analysis",
       "Security Hardening (VAPT remediation)",
-      "Code Review and Mentorship",
+      "Build-vs-Buy Analysis",
       "System Design Tradeoffs"
     ]
   },
   "achievments": [
+    {
+      "ach__id": "ach3",
+      "ach__title": "PROMOTED TO SENIOR FULL STACK DEVELOPER",
+      "ach__place": "CISTUP@IISc",
+      "ach__date": "Aug 2026",
+      "ach__contributions": [
+        "Promoted after delivering five city-scale platforms ahead of schedule.",
+        "Now leads a 3-developer team and owns technical hiring across three project teams.",
+        "Holds 100% code-review coverage across all repository pull requests."
+      ]
+    },
     {
       "ach__id": "ach2",
       "ach__title": "ISO VAPT SECURITY CLEARANCE",
